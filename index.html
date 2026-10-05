@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta
+      name="description"
+      content="Zenvora — considered everyday objects, thoughtfully made."
+    />
+    <title>Zenvora — Made for the everyday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="announcement">
+      A little less, a little better. Free shipping on orders over $75.
+    </div>
+    <header class="site-header">
+      <a class="wordmark" href="#shop" aria-label="Zenvora home"
+        ><span class="brand-mark">z.</span
+        ><span>zenvora<span class="wordmark-light"> goods</span></span></a
+      >
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#shop" data-view="shop">Shop</a>
+        <a class="nav-link" href="#collection" data-view="shop"
+          >Our collection</a
+        >
+        <a class="nav-link" href="#story" data-view="shop">Our story</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="icon-button search-toggle"
+          aria-label="Search products"
+          title="Search"
+        >
+          <i data-lucide="search"></i>
+        </button>
+        <button
+          class="icon-button inventory-toggle"
+          id="inventory-toggle"
+          aria-label="Open inventory management"
+          title="Manage inventory"
+        >
+          <i data-lucide="layout-dashboard"></i
+          ><span class="inventory-label">Manage</span>
+        </button>
+        <button
+          class="icon-button bag-button"
+          id="bag-toggle"
+          aria-label="Open shopping bag"
+          title="Shopping bag"
+        >
+          <i data-lucide="shopping-bag"></i
+          ><span class="bag-count" id="bag-count">0</span>
+        </button>
+        <button
+          class="mobile-menu icon-button"
+          id="mobile-menu"
+          aria-label="Open menu"
+        >
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <main id="shop-view">
+      <section class="hero" id="shop">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> Objects for everyday living
+          </p>
+          <h1>Keep the<br />good <em>things.</em></h1>
+          <p class="hero-description">
+            Useful, lasting things for the rituals that make a day. Thoughtfully
+            sourced, made to be lived with.
+          </p>
+          <a href="#collection" class="button button-dark"
+            >Explore the collection <i data-lucide="arrow-down-right"></i
+          ></a>
+          <div class="hero-note">
+            <span class="note-dot"></span> Small batch, made to last
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1500&q=85"
+            alt="Quiet still life of thoughtfully chosen home objects"
+          />
+          <div class="hero-image-caption">
+            <span>01 / 04</span><span>Simple things, well made.</span>
+          </div>
+          <span class="hero-stamp"
+            >made<br />for the<br /><em>everyday</em></span
+          >
+        </div>
+        <div class="hero-vertical">
+          A slower kind of shopping&nbsp; · &nbsp;est. 2021
+        </div>
+      </section>
+
+      <section class="collection-section" id="collection">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span> The considered edit
+            </p>
+            <h2>Good things,<br /><em>well chosen.</em></h2>
+          </div>
+          <p class="section-intro">
+            Not more things. Just the right ones.<br />Meet the pieces we reach
+            for every day.
+          </p>
+        </div>
+        <div class="collection-toolbar">
+          <div class="filter-list" role="group" aria-label="Filter products">
+            <button class="filter-chip selected" data-filter="All">
+              All pieces <span id="product-total">08</span>
+            </button>
+            <button class="filter-chip" data-filter="Home">Home</button>
+            <button class="filter-chip" data-filter="Carry">Carry</button>
+            <button class="filter-chip" data-filter="Objects">Objects</button>
+          </div>
+          <label class="sort-select"
+            ><span>Sort by</span
+            ><select id="sort-select" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name</option></select
+            ><i data-lucide="chevron-down"></i
+          ></label>
+        </div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="collection-bottom">
+          <span>Made to stay. Not to go.</span
+          ><a href="#story"
+            >A little about us <i data-lucide="arrow-up-right"></i
+          ></a>
+        </div>
+      </section>
+
+      <section class="story-band" id="story">
+        <div class="story-image">
+          <img
+            src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=1200&q=85"
+            alt="A sunlit shelf filled with carefully selected household goods"
+            loading="lazy"
+          />
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> A note from us
+          </p>
+          <h2>Less, but<br /><em>with feeling.</em></h2>
+          <p>
+            We believe ordinary days deserve objects that feel a little
+            extraordinary. So we look for honest materials, useful forms, and
+            the hands behind the making.
+          </p>
+          <a href="#shop" class="text-link"
+            >Get to know us <i data-lucide="arrow-up-right"></i></a
+          ><span class="story-number">Z / 2021</span>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> Notes from the good shelf
+          </p>
+          <h2>Good things, <em>occasionally.</em></h2>
+        </div>
+        <form id="newsletter-form">
+          <label class="sr-only" for="newsletter-email">Email address</label
+          ><input
+            id="newsletter-email"
+            type="email"
+            placeholder="Your email address"
+            required
+          /><button type="submit" aria-label="Subscribe">
+            <i data-lucide="arrow-right"></i>
+          </button>
+          <p class="newsletter-message" id="newsletter-message"></p>
+        </form>
+      </section>
+    </main>
+
+    <main id="inventory-view" class="inventory-view hidden">
+      <div class="inventory-topline">
+        <button class="back-to-shop" id="back-to-shop">
+          <i data-lucide="arrow-left"></i> Back to shop</button
+        ><span class="inventory-kicker"
+          ><span class="live-dot"></span> INVENTORY / 01</span
+        >
+      </div>
+      <section class="inventory-heading">
+        <div>
+          <p class="eyebrow">
+            <span class="eyebrow-line"></span> ZENVORA / OPERATIONS
+          </p>
+          <h1>Stock <em>room.</em></h1>
+          <p class="inventory-subtitle">A clear view of what's on the shelf.</p>
+        </div>
+        <button class="button button-dark" id="add-product-button">
+          <i data-lucide="plus"></i> Add product
+        </button>
+      </section>
+      <section class="metrics-grid" aria-label="Inventory overview">
+        <article class="metric">
+          <div class="metric-top">
+            <span>Total products</span><i data-lucide="package"></i>
+          </div>
+          <div class="metric-number" id="metric-products">08</div>
+          <div class="metric-foot">
+            Across <span id="metric-categories">3</span> collections
+          </div>
+        </article>
+        <article class="metric">
+          <div class="metric-top">
+            <span>Inventory value</span><i data-lucide="circle-dollar-sign"></i>
+          </div>
+          <div class="metric-number" id="metric-value">$0</div>
+          <div class="metric-foot">Retail value at current stock</div>
+        </article>
+        <article class="metric metric-alert">
+          <div class="metric-top">
+            <span>Low stock</span><i data-lucide="triangle-alert"></i>
+          </div>
+          <div class="metric-number" id="metric-low">00</div>
+          <div class="metric-foot">Products with fewer than 8 units</div>
+        </article>
+        <article class="metric">
+          <div class="metric-top">
+            <span>Out of stock</span><i data-lucide="circle-slash-2"></i>
+          </div>
+          <div class="metric-number" id="metric-out">00</div>
+          <div class="metric-foot">Products needing a restock</div>
+        </article>
+      </section>
+      <section class="inventory-table-section">
+        <div class="table-heading">
+          <div>
+            <p class="eyebrow">
+              <span class="eyebrow-line"></span> PRODUCT CATALOG
+            </p>
+            <h2>All products <span id="table-product-count">08</span></h2>
+          </div>
+          <div class="table-tools">
+            <label class="table-search"
+              ><i data-lucide="search"></i
+              ><input
+                id="inventory-search"
+                type="search"
+                placeholder="Search products"
+                aria-label="Search inventory" /></label
+            ><select id="stock-filter" aria-label="Filter by stock status">
+              <option value="all">All stock</option>
+              <option value="low">Low stock</option>
+              <option value="out">Out of stock</option>
+              <option value="healthy">In stock</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th><span class="sr-only">Actions</span></th>
+              </tr>
+            </thead>
+            <tbody id="inventory-table-body"></tbody>
+          </table>
+          <div class="empty-state hidden" id="empty-inventory">
+            Nothing here yet. Try another search, or add a product.
+          </div>
+        </div>
+      </section>
+      <footer class="inventory-footer">
+        <span>ZENVORA <span class="footer-divider">/</span> STOCK ROOM</span
+        ><span>Changes are saved in this browser.</span>
+      </footer>
+    </main>
+
+    <div class="overlay hidden" id="overlay"></div>
+    <aside
+      class="side-panel hidden"
+      id="bag-panel"
+      aria-label="Shopping bag"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">YOUR GOOD THINGS</p>
+          <h2>Your bag <span id="bag-panel-count">(0)</span></h2>
+        </div>
+        <button
+          class="icon-button close-panel"
+          data-close-panel
+          aria-label="Close bag"
+        >
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="bag-items" id="bag-items"></div>
+      <div class="bag-footer">
+        <div class="bag-subtotal">
+          <span>Subtotal</span><strong id="bag-subtotal">$0.00</strong>
+        </div>
+        <p>Shipping calculated at checkout.</p>
+        <button class="button button-dark checkout-button" id="checkout-button">
+          Continue to checkout <i data-lucide="arrow-right"></i>
+        </button>
+      </div>
+    </aside>
+
+    <section
+      class="modal hidden"
+      id="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-heading">
+        <div>
+          <p class="eyebrow">STOCK ROOM / NEW ENTRY</p>
+          <h2 id="modal-title">Add a <em>product.</em></h2>
+        </div>
+        <button class="icon-button" id="close-modal" aria-label="Close dialog">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <form id="product-form">
+        <label
+          >Product name<input
+            name="name"
+            required
+            maxlength="50"
+            placeholder="e.g. Sunday stoneware mug"
+        /></label>
+        <div class="form-row">
+          <label
+            >Category<select name="category" required>
+              <option value="Home">Home</option>
+              <option value="Carry">Carry</option>
+              <option value="Objects">Objects</option>
+            </select></label
+          ><label
+            >Price ($)<input
+              name="price"
+              type="number"
+              min="0.01"
+              step="0.01"
+              required
+              placeholder="32.00"
+          /></label>
+        </div>
+        <div class="form-row">
+          <label
+            >Stock quantity<input
+              name="stock"
+              type="number"
+              min="0"
+              step="1"
+              required
+              placeholder="12" /></label
+          ><label
+            >Image URL<input
+              name="image"
+              type="url"
+              placeholder="https://... (optional)"
+          /></label>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="button button-light" id="cancel-modal">
+            Cancel</button
+          ><button type="submit" class="button button-dark">
+            <i data-lucide="plus"></i> Add to catalog
+          </button>
+        </div>
+      </form>
+    </section>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer class="site-footer">
+      <a class="wordmark" href="#shop"
+        ><span class="brand-mark">z.</span
+        ><span>zenvora<span class="wordmark-light"> goods</span></span></a
+      ><span>Good things for the every day.</span><span>© Zenvora 2025</span>
+    </footer>
+  </body>
+</html>
